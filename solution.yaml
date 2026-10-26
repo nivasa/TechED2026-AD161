@@ -3,10 +3,12 @@ kind: Solution
 
 metadata:
   name: product-master-data-b3aa0
-  version: "1.0.0"
+  version: "1.0.1"
   description: AI agent that enables Sales Representatives to ask natural language questions about product master data from SAP S/4HANA Public Cloud and receive instant answers via Joule
 
 assets:
   - ref: ./assets/product-master-data-agent/asset.yaml
   - ref: ./assets/sap-s4-product-srv-mcp-server/asset.yaml
   - ref: ./assets/sap-s4-clfn-product-srv-mcp-server/asset.yaml
+  - ref: ./assets/sap-s4-salesprice-0001-mcp-server/asset.yaml
+  - ref: ./assets/sap-s4-slspricingconditionrecord-srv-mcp-server/asset.yaml

@@ -12,4 +12,5 @@ Check off items as completed.
 
 ## Asset Implementation
 
-- [x] Execute specification/product-master-data-agent/specification.md (all items)
+- [x] Execute specification/product-master-data-agent/specification.md (existing items)
+- [x] Execute specification/product-master-data-agent/specification.md (pricing extension items — REQ-006, REQ-007, new MCP servers, updated mock, new tests)

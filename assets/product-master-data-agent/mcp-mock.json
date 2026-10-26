@@ -9,12 +9,23 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string", "description": "Filter metadata by entity name"}
+              "filter": {
+                "type": "string",
+                "description": "Filter metadata by entity name"
+              }
             },
             "required": []
           },
           "mock_response": {
-            "EntitySets": ["A_Product", "A_ProductDescription", "A_ProductPlant", "A_ProductSalesDelivery", "A_ProductBasicText", "A_ProductSalesText", "A_ProductUnitsOfMeasure"],
+            "EntitySets": [
+              "A_Product",
+              "A_ProductDescription",
+              "A_ProductPlant",
+              "A_ProductSalesDelivery",
+              "A_ProductBasicText",
+              "A_ProductSalesText",
+              "A_ProductUnitsOfMeasure"
+            ],
             "ServiceVersion": "0001"
           }
         },
@@ -23,9 +34,14 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "requests": {"type": "array", "description": "Array of batch requests"}
+              "requests": {
+                "type": "array",
+                "description": "Array of batch requests"
+              }
             },
-            "required": ["requests"]
+            "required": [
+              "requests"
+            ]
           },
           "mock_response": {
             "responses": []
@@ -36,13 +52,34 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string", "description": "OData filter expression"},
-              "select": {"type": "string", "description": "Fields to return"},
-              "orderby": {"type": "string", "description": "Sort order"},
-              "top": {"type": "string", "description": "Maximum number of records (max 100)"},
-              "skip": {"type": "string", "description": "Number of records to skip"},
-              "expand": {"type": "string", "description": "Navigation properties to expand"},
-              "inlinecount": {"type": "string", "description": "Include count in response"}
+              "filter": {
+                "type": "string",
+                "description": "OData filter expression"
+              },
+              "select": {
+                "type": "string",
+                "description": "Fields to return"
+              },
+              "orderby": {
+                "type": "string",
+                "description": "Sort order"
+              },
+              "top": {
+                "type": "string",
+                "description": "Maximum number of records (max 100)"
+              },
+              "skip": {
+                "type": "string",
+                "description": "Number of records to skip"
+              },
+              "expand": {
+                "type": "string",
+                "description": "Navigation properties to expand"
+              },
+              "inlinecount": {
+                "type": "string",
+                "description": "Include count in response"
+              }
             },
             "required": []
           },
@@ -90,11 +127,22 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "product": {"type": "string", "description": "Product identifier"},
-              "select": {"type": "string", "description": "Fields to return"},
-              "expand": {"type": "string", "description": "Navigation properties to expand"}
+              "product": {
+                "type": "string",
+                "description": "Product identifier"
+              },
+              "select": {
+                "type": "string",
+                "description": "Fields to return"
+              },
+              "expand": {
+                "type": "string",
+                "description": "Navigation properties to expand"
+              }
             },
-            "required": ["product"]
+            "required": [
+              "product"
+            ]
           },
           "mock_response": {
             "Product": "P-100",
@@ -121,7 +169,10 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string", "description": "OData filter expression"}
+              "filter": {
+                "type": "string",
+                "description": "OData filter expression"
+              }
             },
             "required": []
           },
@@ -132,10 +183,22 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string", "description": "OData filter expression"},
-              "select": {"type": "string", "description": "Fields to return"},
-              "top": {"type": "string", "description": "Maximum number of records (max 100)"},
-              "skip": {"type": "string", "description": "Number of records to skip"}
+              "filter": {
+                "type": "string",
+                "description": "OData filter expression"
+              },
+              "select": {
+                "type": "string",
+                "description": "Fields to return"
+              },
+              "top": {
+                "type": "string",
+                "description": "Maximum number of records (max 100)"
+              },
+              "skip": {
+                "type": "string",
+                "description": "Number of records to skip"
+              }
             },
             "required": []
           },
@@ -154,10 +217,19 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "product": {"type": "string", "description": "Product identifier"},
-              "language": {"type": "string", "description": "Language key (e.g. EN, DE)"}
+              "product": {
+                "type": "string",
+                "description": "Product identifier"
+              },
+              "language": {
+                "type": "string",
+                "description": "Language key (e.g. EN, DE)"
+              }
             },
-            "required": ["product", "language"]
+            "required": [
+              "product",
+              "language"
+            ]
           },
           "mock_response": {
             "Product": "P-100",
@@ -170,7 +242,10 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string", "description": "OData filter expression"}
+              "filter": {
+                "type": "string",
+                "description": "OData filter expression"
+              }
             },
             "required": []
           },
@@ -181,10 +256,22 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string", "description": "OData filter expression"},
-              "select": {"type": "string", "description": "Fields to return"},
-              "top": {"type": "string", "description": "Maximum number of records (max 100)"},
-              "skip": {"type": "string", "description": "Number of records to skip"}
+              "filter": {
+                "type": "string",
+                "description": "OData filter expression"
+              },
+              "select": {
+                "type": "string",
+                "description": "Fields to return"
+              },
+              "top": {
+                "type": "string",
+                "description": "Maximum number of records (max 100)"
+              },
+              "skip": {
+                "type": "string",
+                "description": "Number of records to skip"
+              }
             },
             "required": []
           },
@@ -208,10 +295,19 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "product": {"type": "string", "description": "Product identifier"},
-              "language": {"type": "string", "description": "Language key (e.g. EN, DE)"}
+              "product": {
+                "type": "string",
+                "description": "Product identifier"
+              },
+              "language": {
+                "type": "string",
+                "description": "Language key (e.g. EN, DE)"
+              }
             },
-            "required": ["product", "language"]
+            "required": [
+              "product",
+              "language"
+            ]
           },
           "mock_response": {
             "Product": "P-100",
@@ -224,7 +320,10 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string", "description": "OData filter expression"}
+              "filter": {
+                "type": "string",
+                "description": "OData filter expression"
+              }
             },
             "required": []
           },
@@ -235,10 +334,22 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string", "description": "OData filter expression"},
-              "select": {"type": "string", "description": "Fields to return"},
-              "top": {"type": "string", "description": "Maximum number of records (max 100)"},
-              "skip": {"type": "string", "description": "Number of records to skip"}
+              "filter": {
+                "type": "string",
+                "description": "OData filter expression"
+              },
+              "select": {
+                "type": "string",
+                "description": "Fields to return"
+              },
+              "top": {
+                "type": "string",
+                "description": "Maximum number of records (max 100)"
+              },
+              "skip": {
+                "type": "string",
+                "description": "Number of records to skip"
+              }
             },
             "required": []
           },
@@ -259,10 +370,19 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "product": {"type": "string", "description": "Product identifier"},
-              "plant": {"type": "string", "description": "Plant code"}
+              "product": {
+                "type": "string",
+                "description": "Product identifier"
+              },
+              "plant": {
+                "type": "string",
+                "description": "Plant code"
+              }
             },
-            "required": ["product", "plant"]
+            "required": [
+              "product",
+              "plant"
+            ]
           },
           "mock_response": {
             "Product": "P-100",
@@ -274,7 +394,15 @@
         },
         "count_a_productplant_for_api_product_srv": {
           "description": "Get the total count of entities in the A_ProductPlant collection",
-          "input_schema": {"type": "object", "properties": {"filter": {"type": "string"}}, "required": []},
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
           "mock_response": 1
         },
         "list_a_productsalesdelivery_for_api_product_srv": {
@@ -282,10 +410,22 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string", "description": "OData filter expression"},
-              "select": {"type": "string", "description": "Fields to return"},
-              "top": {"type": "string", "description": "Maximum number of records (max 100)"},
-              "skip": {"type": "string", "description": "Number of records to skip"}
+              "filter": {
+                "type": "string",
+                "description": "OData filter expression"
+              },
+              "select": {
+                "type": "string",
+                "description": "Fields to return"
+              },
+              "top": {
+                "type": "string",
+                "description": "Maximum number of records (max 100)"
+              },
+              "skip": {
+                "type": "string",
+                "description": "Number of records to skip"
+              }
             },
             "required": []
           },
@@ -307,11 +447,24 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "product": {"type": "string", "description": "Product identifier"},
-              "productsalesorg": {"type": "string", "description": "Sales organization"},
-              "productdistributionchnl": {"type": "string", "description": "Distribution channel"}
+              "product": {
+                "type": "string",
+                "description": "Product identifier"
+              },
+              "productsalesorg": {
+                "type": "string",
+                "description": "Sales organization"
+              },
+              "productdistributionchnl": {
+                "type": "string",
+                "description": "Distribution channel"
+              }
             },
-            "required": ["product", "productsalesorg", "productdistributionchnl"]
+            "required": [
+              "product",
+              "productsalesorg",
+              "productdistributionchnl"
+            ]
           },
           "mock_response": {
             "Product": "P-100",
@@ -324,7 +477,15 @@
         },
         "count_a_productsalesdelivery_for_api_product_srv": {
           "description": "Get the total count of entities in the A_ProductSalesDelivery collection",
-          "input_schema": {"type": "object", "properties": {"filter": {"type": "string"}}, "required": []},
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
           "mock_response": 1
         },
         "list_a_productsalestext_for_api_product_srv": {
@@ -332,9 +493,18 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string", "description": "OData filter expression"},
-              "select": {"type": "string", "description": "Fields to return"},
-              "top": {"type": "string", "description": "Maximum number of records (max 100)"}
+              "filter": {
+                "type": "string",
+                "description": "OData filter expression"
+              },
+              "select": {
+                "type": "string",
+                "description": "Fields to return"
+              },
+              "top": {
+                "type": "string",
+                "description": "Maximum number of records (max 100)"
+              }
             },
             "required": []
           },
@@ -355,12 +525,25 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "product": {"type": "string"},
-              "productsalesorg": {"type": "string"},
-              "productdistributionchnl": {"type": "string"},
-              "language": {"type": "string"}
+              "product": {
+                "type": "string"
+              },
+              "productsalesorg": {
+                "type": "string"
+              },
+              "productdistributionchnl": {
+                "type": "string"
+              },
+              "language": {
+                "type": "string"
+              }
             },
-            "required": ["product", "productsalesorg", "productdistributionchnl", "language"]
+            "required": [
+              "product",
+              "productsalesorg",
+              "productdistributionchnl",
+              "language"
+            ]
           },
           "mock_response": {
             "Product": "P-100",
@@ -372,7 +555,15 @@
         },
         "count_a_productsalestext_for_api_product_srv": {
           "description": "Get the total count of entities in the A_ProductSalesText collection",
-          "input_schema": {"type": "object", "properties": {"filter": {"type": "string"}}, "required": []},
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
           "mock_response": 1
         },
         "list_a_productunitsofmeasure_for_api_product_srv": {
@@ -380,9 +571,18 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string", "description": "OData filter expression"},
-              "select": {"type": "string", "description": "Fields to return"},
-              "top": {"type": "string", "description": "Maximum number of records (max 100)"}
+              "filter": {
+                "type": "string",
+                "description": "OData filter expression"
+              },
+              "select": {
+                "type": "string",
+                "description": "Fields to return"
+              },
+              "top": {
+                "type": "string",
+                "description": "Maximum number of records (max 100)"
+              }
             },
             "required": []
           },
@@ -406,10 +606,19 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "product": {"type": "string", "description": "Product identifier"},
-              "alternativeunit": {"type": "string", "description": "Alternative unit of measure"}
+              "product": {
+                "type": "string",
+                "description": "Product identifier"
+              },
+              "alternativeunit": {
+                "type": "string",
+                "description": "Alternative unit of measure"
+              }
             },
-            "required": ["product", "alternativeunit"]
+            "required": [
+              "product",
+              "alternativeunit"
+            ]
           },
           "mock_response": {
             "Product": "P-100",
@@ -424,7 +633,15 @@
         },
         "count_a_productunitsofmeasure_for_api_product_srv": {
           "description": "Get the total count of entities in the A_ProductUnitsOfMeasure collection",
-          "input_schema": {"type": "object", "properties": {"filter": {"type": "string"}}, "required": []},
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
           "mock_response": 1
         }
       }
@@ -438,12 +655,22 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string", "description": "Filter metadata by entity name"}
+              "filter": {
+                "type": "string",
+                "description": "Filter metadata by entity name"
+              }
             },
             "required": []
           },
           "mock_response": {
-            "EntitySets": ["A_ClfnProduct", "A_ProductCharc", "A_ProductCharcValue", "A_ProductClass", "A_ProductClassCharc", "A_ClfnClassForKeyDate"],
+            "EntitySets": [
+              "A_ClfnProduct",
+              "A_ProductCharc",
+              "A_ProductCharcValue",
+              "A_ProductClass",
+              "A_ProductClassCharc",
+              "A_ClfnClassForKeyDate"
+            ],
             "ServiceVersion": "0001"
           }
         },
@@ -452,9 +679,14 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "requests": {"type": "array", "description": "Array of batch requests"}
+              "requests": {
+                "type": "array",
+                "description": "Array of batch requests"
+              }
             },
-            "required": ["requests"]
+            "required": [
+              "requests"
+            ]
           },
           "mock_response": {
             "responses": []
@@ -465,10 +697,22 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string", "description": "OData filter expression"},
-              "select": {"type": "string", "description": "Fields to return"},
-              "top": {"type": "string", "description": "Maximum number of records (max 100)"},
-              "skip": {"type": "string", "description": "Number of records to skip"}
+              "filter": {
+                "type": "string",
+                "description": "OData filter expression"
+              },
+              "select": {
+                "type": "string",
+                "description": "Fields to return"
+              },
+              "top": {
+                "type": "string",
+                "description": "Maximum number of records (max 100)"
+              },
+              "skip": {
+                "type": "string",
+                "description": "Number of records to skip"
+              }
             },
             "required": []
           },
@@ -488,11 +732,24 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "product": {"type": "string", "description": "Product identifier"},
-              "classtype": {"type": "string", "description": "Classification type (e.g. 001)"},
-              "classinternalid": {"type": "string", "description": "Class internal ID"}
+              "product": {
+                "type": "string",
+                "description": "Product identifier"
+              },
+              "classtype": {
+                "type": "string",
+                "description": "Classification type (e.g. 001)"
+              },
+              "classinternalid": {
+                "type": "string",
+                "description": "Class internal ID"
+              }
             },
-            "required": ["product", "classtype", "classinternalid"]
+            "required": [
+              "product",
+              "classtype",
+              "classinternalid"
+            ]
           },
           "mock_response": {
             "Product": "P-100",
@@ -503,7 +760,15 @@
         },
         "count_a_clfnproduct_for_api_clfn_product_srv": {
           "description": "Get the total count of entities in the A_ClfnProduct collection",
-          "input_schema": {"type": "object", "properties": {"filter": {"type": "string"}}, "required": []},
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
           "mock_response": 1
         },
         "list_a_clfnclassforkeydate_for_api_clfn_product_srv": {
@@ -511,10 +776,18 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string"},
-              "select": {"type": "string"},
-              "top": {"type": "string"},
-              "skip": {"type": "string"}
+              "filter": {
+                "type": "string"
+              },
+              "select": {
+                "type": "string"
+              },
+              "top": {
+                "type": "string"
+              },
+              "skip": {
+                "type": "string"
+              }
             },
             "required": []
           },
@@ -534,11 +807,22 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "classtype": {"type": "string"},
-              "classinternalid": {"type": "string"},
-              "keydate": {"type": "string", "description": "Key date in /Date(timestamp)/ format"}
+              "classtype": {
+                "type": "string"
+              },
+              "classinternalid": {
+                "type": "string"
+              },
+              "keydate": {
+                "type": "string",
+                "description": "Key date in /Date(timestamp)/ format"
+              }
             },
-            "required": ["classtype", "classinternalid", "keydate"]
+            "required": [
+              "classtype",
+              "classinternalid",
+              "keydate"
+            ]
           },
           "mock_response": {
             "ClassType": "001",
@@ -549,7 +833,15 @@
         },
         "count_a_clfnclassforkeydate_for_api_clfn_product_srv": {
           "description": "Get count of A_ClfnClassForKeyDate entities",
-          "input_schema": {"type": "object", "properties": {"filter": {"type": "string"}}, "required": []},
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
           "mock_response": 1
         },
         "list_a_productcharc_for_api_clfn_product_srv": {
@@ -557,10 +849,18 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string"},
-              "select": {"type": "string"},
-              "top": {"type": "string"},
-              "skip": {"type": "string"}
+              "filter": {
+                "type": "string"
+              },
+              "select": {
+                "type": "string"
+              },
+              "top": {
+                "type": "string"
+              },
+              "skip": {
+                "type": "string"
+              }
             },
             "required": []
           },
@@ -590,12 +890,25 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "product": {"type": "string"},
-              "classtype": {"type": "string"},
-              "classinternalid": {"type": "string"},
-              "charcinternalid": {"type": "string"}
+              "product": {
+                "type": "string"
+              },
+              "classtype": {
+                "type": "string"
+              },
+              "classinternalid": {
+                "type": "string"
+              },
+              "charcinternalid": {
+                "type": "string"
+              }
             },
-            "required": ["product", "classtype", "classinternalid", "charcinternalid"]
+            "required": [
+              "product",
+              "classtype",
+              "classinternalid",
+              "charcinternalid"
+            ]
           },
           "mock_response": {
             "Product": "P-100",
@@ -608,7 +921,15 @@
         },
         "count_a_productcharc_for_api_clfn_product_srv": {
           "description": "Get count of A_ProductCharc entities",
-          "input_schema": {"type": "object", "properties": {"filter": {"type": "string"}}, "required": []},
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
           "mock_response": 2
         },
         "list_a_productcharcvalue_for_api_clfn_product_srv": {
@@ -616,10 +937,18 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string"},
-              "select": {"type": "string"},
-              "top": {"type": "string"},
-              "skip": {"type": "string"}
+              "filter": {
+                "type": "string"
+              },
+              "select": {
+                "type": "string"
+              },
+              "top": {
+                "type": "string"
+              },
+              "skip": {
+                "type": "string"
+              }
             },
             "required": []
           },
@@ -642,13 +971,29 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "product": {"type": "string"},
-              "classtype": {"type": "string"},
-              "classinternalid": {"type": "string"},
-              "charcinternalid": {"type": "string"},
-              "charcvaluePositionnumber": {"type": "string"}
+              "product": {
+                "type": "string"
+              },
+              "classtype": {
+                "type": "string"
+              },
+              "classinternalid": {
+                "type": "string"
+              },
+              "charcinternalid": {
+                "type": "string"
+              },
+              "charcvaluePositionnumber": {
+                "type": "string"
+              }
             },
-            "required": ["product", "classtype", "classinternalid", "charcinternalid", "charcvaluePositionnumber"]
+            "required": [
+              "product",
+              "classtype",
+              "classinternalid",
+              "charcinternalid",
+              "charcvaluePositionnumber"
+            ]
           },
           "mock_response": {
             "Product": "P-100",
@@ -662,7 +1007,15 @@
         },
         "count_a_productcharcvalue_for_api_clfn_product_srv": {
           "description": "Get count of A_ProductCharcValue entities",
-          "input_schema": {"type": "object", "properties": {"filter": {"type": "string"}}, "required": []},
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
           "mock_response": 1
         },
         "list_a_productclass_for_api_clfn_product_srv": {
@@ -670,10 +1023,18 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string"},
-              "select": {"type": "string"},
-              "top": {"type": "string"},
-              "skip": {"type": "string"}
+              "filter": {
+                "type": "string"
+              },
+              "select": {
+                "type": "string"
+              },
+              "top": {
+                "type": "string"
+              },
+              "skip": {
+                "type": "string"
+              }
             },
             "required": []
           },
@@ -693,11 +1054,21 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "product": {"type": "string"},
-              "classtype": {"type": "string"},
-              "classinternalid": {"type": "string"}
+              "product": {
+                "type": "string"
+              },
+              "classtype": {
+                "type": "string"
+              },
+              "classinternalid": {
+                "type": "string"
+              }
             },
-            "required": ["product", "classtype", "classinternalid"]
+            "required": [
+              "product",
+              "classtype",
+              "classinternalid"
+            ]
           },
           "mock_response": {
             "Product": "P-100",
@@ -708,7 +1079,15 @@
         },
         "count_a_productclass_for_api_clfn_product_srv": {
           "description": "Get count of A_ProductClass entities",
-          "input_schema": {"type": "object", "properties": {"filter": {"type": "string"}}, "required": []},
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
           "mock_response": 1
         },
         "list_a_productclasscharc_for_api_clfn_product_srv": {
@@ -716,10 +1095,18 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "filter": {"type": "string"},
-              "select": {"type": "string"},
-              "top": {"type": "string"},
-              "skip": {"type": "string"}
+              "filter": {
+                "type": "string"
+              },
+              "select": {
+                "type": "string"
+              },
+              "top": {
+                "type": "string"
+              },
+              "skip": {
+                "type": "string"
+              }
             },
             "required": []
           },
@@ -741,12 +1128,25 @@
           "input_schema": {
             "type": "object",
             "properties": {
-              "product": {"type": "string"},
-              "classtype": {"type": "string"},
-              "classinternalid": {"type": "string"},
-              "charcinternalid": {"type": "string"}
+              "product": {
+                "type": "string"
+              },
+              "classtype": {
+                "type": "string"
+              },
+              "classinternalid": {
+                "type": "string"
+              },
+              "charcinternalid": {
+                "type": "string"
+              }
             },
-            "required": ["product", "classtype", "classinternalid", "charcinternalid"]
+            "required": [
+              "product",
+              "classtype",
+              "classinternalid",
+              "charcinternalid"
+            ]
           },
           "mock_response": {
             "Product": "P-100",
@@ -759,7 +1159,376 @@
         },
         "count_a_productclasscharc_for_api_clfn_product_srv": {
           "description": "Get count of A_ProductClassCharc entities",
-          "input_schema": {"type": "object", "properties": {"filter": {"type": "string"}}, "required": []},
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "mock_response": 1
+        }
+      }
+    },
+    "sap-s4-salesprice-0001": {
+      "mcp_server_name": "sap.mcp/salesprice_0001",
+      "description": "MCP server exposing SAP S/4HANA Sales Price - Retrieve (A2X) API - read-only standard list prices per product",
+      "tools": {
+        "get_metadata_sap_self": {
+          "description": "Get metadata of the OData service",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "mock_response": {
+            "EntitySets": [
+              "SalesPrice"
+            ],
+            "ServiceVersion": "0001"
+          }
+        },
+        "batch_for_sap_self": {
+          "description": "Execute multiple OData operations in a single batch request",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "requests": {
+                "type": "array"
+              }
+            },
+            "required": [
+              "requests"
+            ]
+          },
+          "mock_response": {
+            "responses": []
+          }
+        },
+        "get_salesprice_for_sap_self": {
+          "description": "Retrieve sales price entries for products",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string",
+                "description": "OData filter (e.g. Material eq P-100)"
+              },
+              "top": {
+                "type": "string"
+              },
+              "skip": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "Material": "P-100",
+                "SalesOrganization": "1000",
+                "DistributionChannel": "10",
+                "ConditionRateValue": "450.00",
+                "ConditionRateValueUnit": "EUR",
+                "ConditionQuantity": "1.000",
+                "ConditionQuantityUnit": "EA",
+                "ConditionValidityStartDate": "/Date(1704067200000)/",
+                "ConditionValidityEndDate": "/Date(9999999999000)/"
+              }
+            ]
+          }
+        },
+        "count_salesprice_for_sap_self": {
+          "description": "Get count of sales price entries",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "mock_response": 1
+        },
+        "action_retrievesalesprice_on_sap_self_salespricetype": {
+          "description": "Retrieve sales price using RetrieveSalesPrice action",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "Material": {
+                "type": "string"
+              },
+              "SalesOrganization": {
+                "type": "string"
+              },
+              "DistributionChannel": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "Material",
+              "SalesOrganization",
+              "DistributionChannel"
+            ]
+          },
+          "mock_response": {
+            "Material": "P-100",
+            "SalesOrganization": "1000",
+            "DistributionChannel": "10",
+            "NetAmount": "450.00",
+            "TransactionCurrency": "EUR",
+            "ConditionValidityEndDate": "/Date(9999999999000)/"
+          }
+        }
+      }
+    },
+    "sap-s4-slspricingconditionrecord-srv": {
+      "mcp_server_name": "sap.mcp/api_slspricingconditionrecord_srv",
+      "description": "MCP server exposing SAP S/4HANA Condition Record for Pricing in Sales - read-only customer-specific pricing conditions and discounts",
+      "tools": {
+        "get_metadata_api_slspricingconditionrecord_srv": {
+          "description": "Get metadata of the OData service",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "mock_response": {
+            "EntitySets": [
+              "A_SlsPrcgConditionRecord",
+              "A_SlsPrcgCndnRecdValidity",
+              "A_SlsPrcgCndnRecdSuplmnt"
+            ],
+            "ServiceVersion": "0001"
+          }
+        },
+        "batch_for_api_slspricingconditionrecord_srv": {
+          "description": "Execute batch OData operations",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "requests": {
+                "type": "array"
+              }
+            },
+            "required": [
+              "requests"
+            ]
+          },
+          "mock_response": {
+            "responses": []
+          }
+        },
+        "list_a_slsprcgconditionrecord": {
+          "description": "Retrieve a list of sales pricing condition records",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              },
+              "select": {
+                "type": "string"
+              },
+              "top": {
+                "type": "string"
+              },
+              "skip": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "ConditionRecord": "0000000001",
+                "ConditionType": "PR00",
+                "SalesOrganization": "1000",
+                "DistributionChannel": "10",
+                "Material": "P-100",
+                "Customer": "CUST-1001",
+                "ConditionRateValue": "420.00",
+                "ConditionRateValueUnit": "EUR",
+                "ConditionValidityStartDate": "/Date(1704067200000)/",
+                "ConditionValidityEndDate": "/Date(9999999999000)/"
+              }
+            ]
+          }
+        },
+        "get_a_slsprcgconditionrecord": {
+          "description": "Retrieve a single sales pricing condition record by key",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "conditionrecord": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "conditionrecord"
+            ]
+          },
+          "mock_response": {
+            "ConditionRecord": "0000000001",
+            "ConditionType": "PR00",
+            "Material": "P-100",
+            "Customer": "CUST-1001",
+            "ConditionRateValue": "420.00",
+            "ConditionRateValueUnit": "EUR",
+            "ConditionValidityEndDate": "/Date(9999999999000)/"
+          }
+        },
+        "count_a_slsprcgconditionrecord": {
+          "description": "Get count of sales pricing condition records",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "mock_response": 1
+        },
+        "list_a_slsprcgcndnrecdvalidity": {
+          "description": "Retrieve sales pricing condition record validity entries",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              },
+              "top": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "ConditionRecord": "0000000001",
+                "ConditionValidityStartDate": "/Date(1704067200000)/",
+                "ConditionValidityEndDate": "/Date(9999999999000)/",
+                "Material": "P-100",
+                "Customer": "CUST-1001"
+              }
+            ]
+          }
+        },
+        "get_a_slsprcgcndnrecdvalidity": {
+          "description": "Get a single pricing condition validity entry by key",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "conditionrecord": {
+                "type": "string"
+              },
+              "conditionvaliditystartdate": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "conditionrecord",
+              "conditionvaliditystartdate"
+            ]
+          },
+          "mock_response": {
+            "ConditionRecord": "0000000001",
+            "ConditionValidityStartDate": "/Date(1704067200000)/",
+            "ConditionValidityEndDate": "/Date(9999999999000)/"
+          }
+        },
+        "count_a_slsprcgcndnrecdvalidity": {
+          "description": "Count pricing condition validity entries",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "mock_response": 1
+        },
+        "list_a_slsprcgcndnrecdsuplmnt": {
+          "description": "Retrieve sales pricing condition record supplements",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              },
+              "top": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "ConditionRecord": "0000000001",
+                "ConditionSequentialNumber": "01",
+                "ConditionType": "K007",
+                "ConditionRateValue": "-5.00",
+                "ConditionRateValueUnit": "%",
+                "ConditionValidityEndDate": "/Date(9999999999000)/"
+              }
+            ]
+          }
+        },
+        "get_a_slsprcgcndnrecdsuplmnt": {
+          "description": "Get a single pricing condition record supplement",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "conditionrecord": {
+                "type": "string"
+              },
+              "conditionsequentialnumber": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "conditionrecord",
+              "conditionsequentialnumber"
+            ]
+          },
+          "mock_response": {
+            "ConditionRecord": "0000000001",
+            "ConditionSequentialNumber": "01",
+            "ConditionType": "K007",
+            "ConditionRateValue": "-5.00",
+            "ConditionRateValueUnit": "%"
+          }
+        },
+        "count_a_slsprcgcndnrecdsuplmnt": {
+          "description": "Count pricing condition record supplements",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {
+                "type": "string"
+              }
+            },
+            "required": []
+          },
           "mock_response": 1
         }
       }
@@ -770,11 +1539,13 @@
     "created_for_agent": "product-master-data-agent",
     "mock_mode": true,
     "deterministic": true,
-    "total_servers": 2,
-    "total_tools": 43,
+    "total_servers": 4,
+    "total_tools": 59,
     "generated_from": [
       "assets/sap-s4-product-srv-mcp-server/mcp-translation/translation.json",
-      "assets/sap-s4-clfn-product-srv-mcp-server/mcp-translation/translation.json"
+      "assets/sap-s4-clfn-product-srv-mcp-server/mcp-translation/translation.json",
+      "assets/sap-s4-salesprice-0001-mcp-server/mcp-translation/translation.json",
+      "assets/sap-s4-slspricingconditionrecord-srv-mcp-server/mcp-translation/translation.json"
     ],
     "generation_date": "2026-10-26"
   }

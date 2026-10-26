@@ -22,6 +22,7 @@ Reducing product lookup time from 5 minutes to under 30 seconds saves each rep s
 1. Deliver accurate product master data answers via natural language in Joule in under 30 seconds
 2. Support multi-turn conversations so Sales Reps can refine questions without restarting
 3. Cover all key product detail fields: description, category, weight, dimensions, and classification attributes
+4. Provide standard list prices and customer-specific pricing conditions on demand
 
 ---
 
@@ -52,12 +53,13 @@ Sandra oversees a team of 15 Sales Representatives and is accountable for team p
 - Enable natural language product queries for Sales Representatives within Joule
 - Retrieve and present product master data (description, category, weight, dimensions) from SAP S/4HANA Public Cloud
 - Retrieve and present product classification and technical attributes from SAP S/4HANA Public Cloud
+- Retrieve and present standard list prices per product from SAP S/4HANA Public Cloud
+- Retrieve and present customer-specific pricing conditions and discounts from SAP S/4HANA Public Cloud
 - Support multi-turn conversations within a single session
 - Instrument all business steps for observability and monitoring
 
 ### Non-Goals (Out of Scope)
 
-- Pricing data (pricing APIs are not available in the current landscape)
 - Stock availability and ATP (availability APIs are not available in the current landscape)
 - Write operations (no creation, update, or deletion of product data)
 - Integration with systems other than SAP S/4HANA Public Cloud
@@ -106,12 +108,32 @@ Sandra oversees a team of 15 Sales Representatives and is accountable for team p
 - **Maps to Objective**: Objective 1
 - **Priority Rank**: 4
 
+**REQ-006**: Standard List Prices
+
+- **Problem to Solve**: Sales Reps need to know a product's standard price during customer conversations without switching to a separate screen or report.
+- **User Story**: As a Sales Representative, I need to ask for a product's list price and receive the current value so that I can quote customers accurately and confidently.
+- **Acceptance Criteria**:
+  - Given a valid product, when I ask "What is the list price for product X?", then the agent returns the current standard price from the Sales Price API (SALESPRICE_0001) in real time.
+  - Given a product with no price record, when the agent searches, then it returns a clear "no price found" message.
+- **Maps to Objective**: Objective 4
+- **Priority Rank**: 6
+
+**REQ-007**: Customer-Specific Pricing Conditions & Discounts
+
+- **Problem to Solve**: Sales Reps need visibility into customer-specific pricing conditions and discounts to support accurate quoting during negotiations.
+- **User Story**: As a Sales Representative, I need to ask about pricing conditions for a specific customer-product combination so that I can provide accurate pricing during negotiations.
+- **Acceptance Criteria**:
+  - Given a valid product and customer combination, when I ask "What discount applies to customer Y for product X?", then the agent returns the relevant pricing condition records from the Condition Record API (API_SLSPRICINGCONDITIONRECORD_SRV).
+  - Given no condition records exist, when the agent searches, then it clearly communicates that no specific conditions were found.
+- **Maps to Objective**: Objective 4
+- **Priority Rank**: 7
+
 **REQ-005**: Data Accuracy & Source Transparency
 
 - **Problem to Solve**: Sales Reps and managers need confidence that the data is directly from S/4HANA, not approximated.
 - **User Story**: As a Sales Representative, I need to know that answers come from the live SAP system so that I can trust them in customer conversations.
 - **Acceptance Criteria**:
-  - Given a product query, when the agent responds, then the answer is sourced directly from SAP S/4HANA Public Cloud APIs (API_PRODUCT_SRV or API_CLFN_PRODUCT_SRV) in real time.
+  - Given a product query, when the agent responds, then the answer is sourced directly from SAP S/4HANA Public Cloud APIs (API_PRODUCT_SRV, API_CLFN_PRODUCT_SRV, SALESPRICE_0001, or API_SLSPRICINGCONDITIONRECORD_SRV) in real time.
   - Given data is unavailable, when the agent responds, then it clearly communicates that the information could not be retrieved rather than returning stale or fabricated data.
 - **Maps to Objective**: Objective 1
 - **Priority Rank**: 5
@@ -128,12 +150,14 @@ A pro-code Python AI agent (A2A protocol) deployed on SAP BTP. The agent is acce
 - **Python A2A Agent**: Core reasoning and conversation engine; handles natural language understanding, context retention, and response generation
 - **Product Master MCP Tool**: Custom MCP translation file exposing SAP S/4HANA `API_PRODUCT_SRV:v1` — provides product descriptions, categories, weights, and dimensions
 - **Product Classification MCP Tool**: Custom MCP translation file exposing SAP S/4HANA `API_CLFN_PRODUCT_SRV:v1` — provides classification details and technical attributes
-- **SAP S/4HANA Public Cloud**: Authoritative system of record for all product master data
+- **Sales Price MCP Tool**: Custom MCP translation file exposing SAP S/4HANA `SALESPRICE_0001:v1` — provides standard list prices per product
+- **Pricing Conditions MCP Tool**: Custom MCP translation file exposing SAP S/4HANA `API_SLSPRICINGCONDITIONRECORD_SRV:v1` — provides customer-specific pricing conditions and discounts
+- **SAP S/4HANA Public Cloud**: Authoritative system of record for all product master and pricing data
 - **Joule**: User-facing interface through which Sales Representatives interact with the agent
 
 **Integration Points:**
 
-- S/4HANA Public Cloud → Agent: OData REST calls via SAP API_PRODUCT_SRV and API_CLFN_PRODUCT_SRV, read-only, on-demand per query
+- S/4HANA Public Cloud → Agent: OData REST calls via SAP API_PRODUCT_SRV, API_CLFN_PRODUCT_SRV, SALESPRICE_0001, and API_SLSPRICINGCONDITIONRECORD_SRV — all read-only, on-demand per query
 
 ### Agent Extensibility & Instrumentation
 
@@ -160,10 +184,14 @@ All five business milestones are instrumented as OpenTelemetry spans. Each miles
 **Knowledge & data sources accessed:**
 - SAP S/4HANA Public Cloud — Product Master (API_PRODUCT_SRV): product descriptions, categories, units, weights, dimensions
 - SAP S/4HANA Public Cloud — Product Classification (API_CLFN_PRODUCT_SRV): class assignments and characteristic values
+- SAP S/4HANA Public Cloud — Sales Price (SALESPRICE_0001): standard list prices per product
+- SAP S/4HANA Public Cloud — Pricing Conditions (API_SLSPRICINGCONDITIONRECORD_SRV): customer-specific pricing conditions and discounts
 
 **Tools or connectors invoked:**
 - Product Master MCP Tool (`API_PRODUCT_SRV`): read-only — retrieves product header and general data
 - Product Classification MCP Tool (`API_CLFN_PRODUCT_SRV`): read-only — retrieves classification data and technical attributes
+- Sales Price MCP Tool (`SALESPRICE_0001`): read-only — retrieves standard list prices per product
+- Pricing Conditions MCP Tool (`API_SLSPRICINGCONDITIONRECORD_SRV`): read-only — retrieves customer-specific pricing conditions and discounts
 
 **Guardrails & fail-safes:**
 - The agent performs no write operations under any circumstances
@@ -226,7 +254,7 @@ All five business milestones are instrumented as OpenTelemetry spans. Each miles
 
 ### Dependencies
 
-- SAP S/4HANA Public Cloud API connectivity (API_PRODUCT_SRV, API_CLFN_PRODUCT_SRV)
+- SAP S/4HANA Public Cloud API connectivity (API_PRODUCT_SRV, API_CLFN_PRODUCT_SRV, SALESPRICE_0001, API_SLSPRICINGCONDITIONRECORD_SRV)
 - SAP Generative AI Hub access for the LLM engine
 - Joule configuration for agent surfacing
 
@@ -238,4 +266,6 @@ All five business milestones are instrumented as OpenTelemetry spans. Each miles
 
 - SAP S/4HANA Product Master API (A2X): `sap.s4:apiResource:API_PRODUCT_SRV:v1`
 - SAP S/4HANA Product Classification API: `sap.s4:apiResource:API_CLFN_PRODUCT_SRV:v1`
+- SAP S/4HANA Sales Price API: `sap.s4:apiResource:SALESPRICE_0001:v1`
+- SAP S/4HANA Condition Record for Pricing in Sales API: `sap.s4:apiResource:API_SLSPRICINGCONDITIONRECORD_SRV:v1`
 - SAP Lead to Cash (Standard B2B) — Plan Prices and Promotions: BPS-359_002

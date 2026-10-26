@@ -4,7 +4,7 @@ SAP S/4HANA Public Cloud AI Agent — natural language product data queries via 
 
 ## Business challenge
 
-Sales Representatives spend significant time manually searching for product master data in SAP S/4HANA. With 50 reps querying product information multiple times a day, this creates a bottleneck that slows down customer conversations and reduces responsiveness. The goal is to enable reps to ask natural language questions about product details (descriptions, categories, weights, dimensions, etc.) and receive instant, accurate answers — directly within Joule.
+Sales Representatives spend significant time manually searching for product master data and pricing information in SAP S/4HANA. With 50 reps querying product information multiple times a day, this creates a bottleneck that slows down customer conversations and reduces responsiveness. The goal is to enable reps to ask natural language questions about product details (descriptions, categories, weights, dimensions, etc.) as well as standard list prices and customer-specific pricing conditions — and receive instant, accurate answers directly within Joule.
 
 ## Business Goals & Success Criteria
 
@@ -45,16 +45,18 @@ Sales Representatives querying product master data maps to the Lead to Cash (Sta
 | ---------------------- | ----------------------- | ---------- | ----------------- | ------------------ | ------------------ | ------------------- | ---- | ------------------- |
 | Query product details (description, category, dimensions, weight) | SAP S/4HANA Cloud Public Edition — Sales Price Planning and Definition | `sap.s4:apiResource:API_PRODUCT_SRV:v1` | — | — | — | — | Yes | No pre-built MCP server; custom MCP translation file required |
 | Query product classification & technical attributes | SAP S/4HANA Cloud Public Edition | `sap.s4:apiResource:API_CLFN_PRODUCT_SRV:v1` | — | — | — | — | Yes | No pre-built MCP server; custom MCP translation file required |
+| Query standard list prices per product | SAP S/4HANA Cloud Public Edition | `sap.s4:apiResource:SALESPRICE_0001:v1` | — | — | — | — | Yes | No pre-built MCP server; custom MCP translation file required |
+| Query customer-specific pricing conditions & discounts | SAP S/4HANA Cloud Public Edition | `sap.s4:apiResource:API_SLSPRICINGCONDITIONRECORD_SRV:v1` | — | — | — | — | Yes | No pre-built MCP server; custom MCP translation file required |
 | Natural language interface for Sales Reps | AI Agent with Joule integration | — | — | — | — | — | Yes | Requires Python A2A agent; no standard SAP product covers this |
 
 ### Key findings
 
-- Two S/4HANA Public Cloud APIs are available and in-scope: Product Master (API_PRODUCT_SRV) and Product Master Data Including Classification (API_CLFN_PRODUCT_SRV).
-- Pricing and availability APIs (e.g., OP_API_SLSPRICINGPROCEDURE_SRV_0001, CE_API_PRODUCT_AVAILY_INFO_0001) are marked unavailable in this landscape and are excluded from scope.
-- No pre-built MCP servers exist for these APIs; custom MCP translation files must be generated.
+- Four S/4HANA Public Cloud APIs are now in-scope: Product Master (API_PRODUCT_SRV), Product Classification (API_CLFN_PRODUCT_SRV), Sales Price - Retrieve (SALESPRICE_0001), and Condition Record for Pricing in Sales (API_SLSPRICINGCONDITIONRECORD_SRV).
+- Availability APIs and SOAP-based pricing services (e.g., Manage Sales Price Lists, Query Price Lists) are marked unavailable in this landscape and are excluded from scope.
+- No pre-built MCP servers exist for any of these APIs; custom MCP translation files must be generated for all four.
 - The natural language interface and reasoning layer requires a custom Python AI agent (A2A protocol).
 - Integration into Joule is the target channel, aligning with SAP's embedded AI strategy.
-- Scope is intentionally focused on product details only, per user confirmation.
+- Scope covers product details and pricing (standard list prices + customer-specific conditions), per user confirmation.
 
 ## Recommendations
 

@@ -23,6 +23,12 @@ requires:
   - name: sap-s4-clfn-product-srv-mcp-server
     kind: mcp-server
     ordId: customer.build:apiResource:product-master-data-b3aa0.sap-s4-clfn-product-srv-mcp-server:v1
+  - name: sap-s4-salesprice-0001-mcp-server
+    kind: mcp-server
+    ordId: customer.build:apiResource:product-master-data-b3aa0.sap-s4-salesprice-0001-mcp-server:v1
+  - name: sap-s4-slspricingconditionrecord-srv-mcp-server
+    kind: mcp-server
+    ordId: customer.build:apiResource:product-master-data-b3aa0.sap-s4-slspricingconditionrecord-srv-mcp-server:v1
 
 probes:
   startup:
